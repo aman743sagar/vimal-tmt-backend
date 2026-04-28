@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 8000;
 // ✅ CORS (clean)
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174","vimal-tmt-admin-5owf-3s5iwx9zq-amansagar60281-5208s-projects.vercel.app"],
+    origin: ["http://localhost:5173", "http://localhost:5174","vimal-tmt-admin-d989-ljgv0j2gn-amansagar60281-5208s-projects.vercel.app"],
     credentials: true,
   })
 );
