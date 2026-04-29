@@ -10,10 +10,9 @@ import {
 
 const router = Router();
 
-// ✅ upload first, then auth (important)
 router.post("/create", upload.single("image"), authMiddleware, createMedia);
 
-router.get("/all", authMiddleware, getMedia);
+router.get("/all", getMedia);
 router.delete("/delete/:id", authMiddleware, deleteMedia);
 
 export default router;
