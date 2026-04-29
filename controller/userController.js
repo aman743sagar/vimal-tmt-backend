@@ -27,6 +27,9 @@ export const loginAdmin = async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
+        secure:true,
+        sameSite:"None",
+        path:"/",
         maxAge: 24 * 60 * 60 * 1000,
       })
       .json({
@@ -64,7 +67,12 @@ export const getUser=async(req,res)=>{
 export const logoutAdmin = (req, res) => {
   try {
     res
-      .clearCookie("token")
+      .clearCookie("token",{
+        httpOnly: true,
+        secure:true,
+        sameSite:"None",
+        path:"/",
+      })
       .json({ success: true, message: "Logout successful" });
   } catch (error) {
     res.status(500).json({
